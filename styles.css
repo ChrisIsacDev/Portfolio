@@ -1,0 +1,452 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #08080a;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  overflow:inherit
+}
+strong {
+color: #016cf8;
+transition: transform 0.5s;
+}
+
+strong:hover {
+transform: scale(1.2);
+}
+
+.trail {
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  background-color: transparent;
+  border: 2px solid #0074e4;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s;
+}
+
+.trail-element {
+  position: absolute;
+  width: 5px; /* Largura da linha */
+  height: 5px; /* Altura da linha */
+  background-color: #016cf8;
+  pointer-events:none;
+  transition: opacity 0.3s;
+  transform: translate(-50%, -50%);
+  opacity: 0.6;
+}
+
+/* Multiplique os elementos */
+.trail-element:nth-child(odd) {
+  transform: translate(-50%, -50%) rotate(10deg);
+}
+
+.trail-element:nth-child(even) {
+  transform: translate(-50%, -50%) rotate(-10deg);
+}
+header {
+  background-color: #0e0e0ef6;
+  text-align: center;
+  border: 1px solid #fdfdfd2c; /* Corrigido aqui */
+  border-radius: 16px;
+  margin-left: 2%;
+  margin-right: 2%;
+  height: 80px;
+  width: 92%;
+  color: white;
+  position: fixed;
+  left: 0; 
+  right: 0; 
+  margin: 0 auto;
+  display: flex; /* Modifica a exibição para um container flexível */
+  align-items: center; /* Alinha os elementos verticalmente ao centro */
+  justify-content: space-between; /* Alinha os elementos à esquerda e à direita */
+  padding: 0 20px;
+  z-index: 1;
+}
+
+.logo img {
+  width: 100px;
+  height: auto;
+  margin-bottom: -15px;
+}
+
+.status button{
+color: #fdfdfd;
+background-color: #08080a;
+width: 200px;
+height: 40px;
+border-radius: 20px;
+border: 1px solid #fdfdfd2c; /* Corrigido aqui */
+transition: background-color 0.5s;
+}
+
+.status button ion-icon {
+color: #016cf8;
+font-size: 20px;
+display: block;
+margin-bottom: -10px;
+padding-top: 5px;
+}
+
+.status button:hover {
+  background-color: #0f0f0f;
+  cursor: pointer;
+}
+
+#categories {
+  top: 10px;
+  margin-left: 0px;
+  overflow: hidden;
+  float: right;
+  position: relative;
+  margin-top: 0; /* Mantém a distância do topo */
+  list-style: none;
+}
+
+header nav ul {
+  right: 0;
+  left: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex; 
+ }
+ 
+ header nav ul li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
+  gap: 20px;
+ }
+ 
+ header nav ul li a {
+  text-decoration: none;
+  color: #adadad;
+  font-weight: bold;
+  position: relative; /* Adiciona posição relativa para elementos filho absolutos */
+  transition: color 0.3s ease, background-color 0.3s ease; /* Adiciona transições */
+ }
+ 
+ header nav ul li a:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px; /* Altura da linha */
+  bottom: 0;
+  left: 0;
+  background-color: #016cf8; /* Cor da linha */
+  transition: width 0.3s ease; /* Animação de largura */
+ }
+ 
+ header nav ul li a:hover:before {
+  width: 100%; /* Largura da linha quando hover */
+ }
+ 
+ header nav ul li a:hover {
+  color: #016cf8;
+ }
+
+ .banner {
+  position: relative;
+  padding: 0;
+  margin-left: 80px;
+  margin-top: 20px; /* Adicione um espaçamento em relação ao topo da página */
+  text-align: left; /* Centralize o conteúdo horizontalmente */
+}
+
+.banner h2 {
+  font-family: "montserrat", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  color: #fff;
+  font-size: 56px;
+  transition: font-size 0.3s;
+}
+
+.banner h2:hover {
+  font-size: 60px;
+}
+
+.banner h3 {
+  font-family: "permanent-marker", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #ccc;
+  font-size: 28px;
+  line-height: 1.5;
+  margin-bottom: -500px; /* Adicione uma margem inferior mínima */
+}
+
+.banner h3, .banner h2 {
+  margin-top: 2%;
+  margin-bottom: 10px;
+}
+
+.banner img {
+  position: absolute;
+  float: right;
+  max-width: 80%;
+  right: 0;
+}
+
+
+
+#titles {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 60px;
+  display: grid;
+  grid-template-columns: repeat(3, 2fr);
+  gap: 10px;
+}
+
+.title {
+  color: #fff; /* Cor do texto */
+  border-radius: 10px; /* Borda arredondada */
+  border: 1px solid #fdfdfd80;
+  text-align: center;
+  transition: transform 0.3s ease;
+  width: 90%;
+  height: 140%;
+  transition: transform 0.5s;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  position: relative;
+  overflow: hidden; /* Oculta o overflow para evitar que o gradiente saia do container */
+  background: linear-gradient(95deg, #000000, #000000, #0e0e0e, #000000); /* Gradiente inicial */
+  background-size: 100% 50%; /* Tamanho do gradiente para criar espaço de movimento */
+  background-position: 50% 0; /* Começa a partir da esquerda */
+}
+
+/* Animação de gradiente em loop */
+@keyframes metalGradient {
+  0% {
+      background-position: 0% 0; /* Inicia da esquerda */
+  }
+  100% {
+      background-position: 100% 100%; /* Termina na direita */
+  }
+}
+
+.title:hover {
+  transform: scale(1.05); /* Efeito de escala no hover */
+  cursor: pointer;
+  animation: metalGradient 3s linear infinite; /* Aplicar a animação de gradiente em loop no hover */
+}
+/* ... Outras regras CSS ... */
+
+
+
+
+@keyframes shadow-pulse {
+  0% {
+    box-shadow: 0 0 10px #333; 
+  }
+  50% {
+    box-shadow: 0 0 15px #077bff; 
+  }
+  100% {
+    box-shadow: 0 0 10px #333; 
+  }
+}
+
+.title.active {
+  border: 1px solid#016cf8;
+  animation: click 0.3s ease-in-out;
+}
+
+.title:hover h2, .title.active h2, .title:hover h3, .title.title.active h3{
+  color: #016cf8; /* Altere a cor para a desejada */
+}
+
+@keyframes click {
+  0%, 100% {
+      background-color: #08080a;
+  }
+  50% {
+      background-color: #333;
+  }
+}
+
+.title:hover {
+  animation: shadow-pulse 3s ease infinite;
+  border: 3px solid #016cf8;
+  cursor: pointer;
+  transform: scale(1.1) perspective(1000px) rotateX(20deg);
+}
+
+.about {
+  text-align: left;
+  margin-top: 10%;
+}
+
+.about p {
+color: #ffffff;
+text-align: left;
+margin-right: 100px;
+
+}
+
+.about h2 {
+  color: #0057f8;
+  text-align: left;
+
+  }
+
+  .about img {
+  float: left; /* Coloca a imagem à esquerda */
+  width: 40%; /* Define a largura da imagem (ajuste conforme necessário) */
+  height: 220px;
+  margin-right: 20px; /* Adiciona um espaço entre a imagem e o texto */
+  margin-left: 50px;
+  filter: grayscale(100%);
+  transition: filter 0.5s ease;
+  object-fit: cover;
+  border-radius: 5%;
+  }
+
+  .about img:hover {
+    filter: grayscale(0%);
+  }
+
+  .embed-image {
+    text-align: left;
+    margin-top: 10%;
+    position: relative;
+  }
+  
+  #designer-section .image-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Divide em duas colunas com larguras iguais */
+    align-items: center;
+}
+
+#designer-section .main-image {
+    margin-left: 50px;
+}
+
+#designer-section img {
+    max-width: 750px; /* Largura máxima da imagem principal */
+    height: 400px;
+    object-fit: cover;
+    display: block;
+    right: 0;
+}
+
+.categorie {
+    font-family: "permanent-marker", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 36px;
+    text-align: left;
+    margin-left: 50px;
+    color: #adadad;
+}
+
+.thumbnail {
+    object-fit: cover;
+    cursor: pointer;
+    width: 200px; /* Largura máxima das miniaturas */
+    height: 300px; /* Altura maior das miniaturas */
+    margin: 20px; /* Espaço entre as miniaturas */
+}
+.thumbnail-card {
+  width: 300px; /* Largura máxima do card */
+  height: 200px; /* Altura máxima do card */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 10px; /* Espaço entre os cards */
+  display: flex;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+  position: relative;
+}
+
+.thumbnail-card:hover {
+  transform: scale(1.05);
+}
+
+.card-text {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 10px;
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-subtitle {
+  font-size: 16px;
+  margin: 0;
+}
+.main-image {
+  position: relative;
+}
+
+.main-image:hover {
+cursor: pointer;
+}
+
+.main-image-text {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  transition: color 0.5s;
+}
+
+.thumbnail-images h2:hover {
+color: #016cf8;
+}
+
+.main-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.main-subtitle {
+  font-size: 18px;
+  margin: 0;
+}
+
+
+
+
+
+
+  
+
+  @media (max-width: 768px) {
+    #titles {
+      margin-left: auto;
+      margin-right: auto;
+      padding: 60px;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 60px;
+    }
+      .about {
+        margin-top: 40px;
+        margin-left: auto;
+        margin-right: auto;
+        }
+        .about img {
+          display: block;
+          margin-bottom: 20px;
+          }
+          }
