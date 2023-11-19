@@ -1,11 +1,14 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #08080a;
   line-height: 1.6;
   margin: 0;
   padding: 0;
-  overflow:inherit
+  overflow: inherit;
+  background-color: #08080a;
+  background-image: url('/imgs/categories/point-background.png');
+  background-repeat: repeat;
 }
+
 strong {
 color: #016cf8;
 transition: transform 0.5s;
@@ -204,21 +207,21 @@ header nav ul {
 }
 
 .title {
-  color: #fff; /* Cor do texto */
-  border-radius: 10px; /* Borda arredondada */
+  color: #fff;
+  border-radius: 10px;
   border: 1px solid #fdfdfd80;
   text-align: left;
   transition: transform 0.3s ease;
   width: 370px;
   height: 250px;
   transition: transform 0.5s;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   position: relative;
-  overflow: hidden; /* Oculta o overflow para evitar que o gradiente saia do container */
-  background: linear-gradient(95deg, #000000, #000000, #0e0e0e, #000000); /* Gradiente inicial */
-  background-size: 100% 50%; /* Tamanho do gradiente para criar espaço de movimento */
-  background-position: 50% 0; /* Começa a partir da esquerda */
+  overflow: hidden;
+  background: linear-gradient(95deg, #000000, #000000, #0e0e0e, #000000);
+  background-size: 200% 100%; 
 }
+
 
 .title h2, .title p {
 margin-left: 26px;
@@ -319,7 +322,7 @@ margin-right: 100px;
   .about img {
   float: left; 
   width: 40%; 
-  height: 270px;
+  height: 285px;
   margin-right: 40px; 
   margin-left: 50px;
   filter: grayscale(100%);
