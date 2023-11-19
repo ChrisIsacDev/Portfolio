@@ -200,17 +200,17 @@ header nav ul {
   padding: 60px;
   display: grid;
   grid-template-columns: repeat(3, 2fr);
-  gap: 10px;
+  gap: 25px;
 }
 
 .title {
   color: #fff; /* Cor do texto */
   border-radius: 10px; /* Borda arredondada */
   border: 1px solid #fdfdfd80;
-  text-align: center;
+  text-align: left;
   transition: transform 0.3s ease;
-  width: 90%;
-  height: 140%;
+  width: 370px;
+  height: 250px;
   transition: transform 0.5s;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra suave */
   position: relative;
@@ -218,6 +218,22 @@ header nav ul {
   background: linear-gradient(95deg, #000000, #000000, #0e0e0e, #000000); /* Gradiente inicial */
   background-size: 100% 50%; /* Tamanho do gradiente para criar espaço de movimento */
   background-position: 50% 0; /* Começa a partir da esquerda */
+}
+
+.title h2, .title p {
+margin-left: 26px;
+margin-right: 20px;
+}
+
+.title .btn {
+text-align: center;
+color: #ffffff;
+margin-left: 26px;
+background: none;
+border: 2px solid #ffffff;
+border-radius: 25px;
+width: 150px;
+height: 30px;
 }
 
 /* Animação de gradiente em loop */
@@ -261,6 +277,11 @@ header nav ul {
   color: #016cf8; /* Altere a cor para a desejada */
 }
 
+.title:hover .btn, .title.active button {
+border: 2px solid #016cf8;
+color: #016cf8;
+}
+
 @keyframes click {
   0%, 100% {
       background-color: #08080a;
@@ -296,19 +317,34 @@ margin-right: 100px;
   }
 
   .about img {
-  float: left; /* Coloca a imagem à esquerda */
-  width: 40%; /* Define a largura da imagem (ajuste conforme necessário) */
-  height: 220px;
-  margin-right: 20px; /* Adiciona um espaço entre a imagem e o texto */
+  float: left; 
+  width: 40%; 
+  height: 270px;
+  margin-right: 40px; 
   margin-left: 50px;
   filter: grayscale(100%);
   transition: filter 0.5s ease;
   object-fit: cover;
-  border-radius: 5%;
+  }
+
+  .about-text {
+  border-left: 1px solid #016cf8;
+  margin-right: 20px; 
+  margin-left: 600px;
   }
 
   .about img:hover {
     filter: grayscale(0%);
+  }
+
+  .codes {
+  font-size: 26px;
+  color: #adadad;
+  transition: color 0.5s;
+  }
+
+  .codes:hover {
+  color: #016cf8;
   }
 
   .embed-image {
@@ -425,11 +461,98 @@ color: #016cf8;
 }
 
 
+.work-header {
+  text-align: center;
+  padding: 20px 0;
+  color: #fff;
+}
 
+.works {
+  display: grid;
+  grid-template-columns: repeat(3, 3fr);
+  justify-content: center;
+}
 
+.card {
+position: relative;
+display: flex;
+align-items: center;
+width: 320px;
+box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+padding: 32px;
+overflow: hidden;
+border-radius: 10px;
+transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+margin-left: auto;
+margin-right: auto;
+width: 70%;
+margin-top: 100px;
+}
 
+.card-content {
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+gap: 20px;
+color: #ffffff;
+transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+}
 
-  
+.card-content .card-heading {
+font-weight: 700;
+font-size: 32px;
+}
+
+.card-content .card-description {
+line-height: 1.5;
+}
+
+.card-content .btn {
+color: #ffffff;
+text-decoration: none;
+padding: 10px;
+font-weight: 600;
+border: none;
+cursor: pointer;
+background: linear-gradient(-45deg, #016cf8 0%, #2332ff 100%);
+border-radius: 5px;
+box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card::before {
+content: "";
+position: absolute;
+left: 0;
+bottom: 0;
+width: 100%;
+height: 5px;
+background: linear-gradient(-45deg, #016cf8 0%, #2332ff 100%);
+z-index: -1;
+transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.card:hover::before {
+height: 100%;
+}
+
+.card:hover {
+box-shadow: none;
+}
+
+.card:hover .btn {
+color: #016cf8;
+background: #ffffff;
+}
+
+.card-content .btn:hover {
+  outline: 2px solid #ffffff;
+  background-color: transparent;
+  color: #ffffff;
+}
+
+.card-content .btn:active {
+box-shadow: none;
+}
 
   @media (max-width: 768px) {
     #titles {
