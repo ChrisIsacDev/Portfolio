@@ -48,6 +48,32 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
+function handleTitleHover() {
+  const titles = document.querySelectorAll('.title');
+
+  titles.forEach(title => {
+    title.addEventListener('mouseover', () => {
+      titles.forEach(otherTitle => {
+        if (otherTitle !== title) {
+          otherTitle.classList.add('hovered');
+        }
+      });
+    });
+
+    title.addEventListener('mouseout', () => {
+      titles.forEach(otherTitle => {
+        if (otherTitle !== title) {
+          otherTitle.classList.remove('hovered');
+        }
+      });
+    });
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  handleTitleHover();
+});
+
 
 const titles = document.querySelectorAll(".title");
 
