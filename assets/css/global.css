@@ -1,13 +1,37 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Sora', sans-serif;
   line-height: 1.6;
   margin: 0;
   padding: 0;
   overflow: inherit;
   background-color: #08080a;
   height: 100vh;
-  margin: 0; 
+  margin-right: 25px; 
+  margin-left: 25px; 
+
+  --sb-track-color: #000000;
+  --sb-thumb-color: #ff0035;
+  --sb-size: 10px;
+
+  scrollbar-color: var(--sb-thumb-color) 
+                   var(--sb-track-color);
 }
+
+body::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 10px;
+}
+
+
 
 /* Hide scrollbar for Chrome, Safari and Opera */
 ::-webkit-scrollbar {
@@ -76,8 +100,13 @@ html {
   z-index: 99999999; /* so that it stays on top of all other elements */
 }
 
+::selection {
+  background-color: #FF0035; 
+  color: #f4f4f4; 
+}
+
 header {
-  background-color: #000000f6;
+  background-color: #000000f4;
   text-align: center;
   border: 1px solid #ffffff2c; /* Corrigido aqui */
   border-radius: 16px;
@@ -98,19 +127,18 @@ header {
 }
 
 .logo img {
-  width: 100px;
+  width: 120px;
   height: auto;
-  margin-bottom: -15px;
+  margin-bottom: -5px;
 }
 
 .status button{
 color: #fdfdfd;
-background-color: #08080a;
+background-color: #FF0035;
 width: 200px;
 height: 40px;
 border-radius: 20px;
-border: 1px solid #fdfdfd2c; /* Corrigido aqui */
-transition: background-color 0.5s;
+transition: all 0.5s;
 }
 
 .status button ion-icon {
@@ -122,7 +150,8 @@ padding-top: 5px;
 }
 
 .status button:hover {
-  background-color: #0f0f0f;
+  background-color: #FF0035;
+  letter-spacing: 2px;
   cursor: pointer;
 }
 
@@ -172,7 +201,7 @@ header nav ul {
   height: 2px; /* Altura da linha */
   bottom: 0;
   left: 0;
-  background-color: #016cf8; /* Cor da linha */
+  background-color: #ff0035; /* Cor da linha */
   transition: width 0.3s ease; /* Animação de largura */
  }
  
@@ -181,7 +210,7 @@ header nav ul {
  }
  
  header nav ul li a:hover {
-  color: #016cf8;
+  color: #ff0035;
  }
 
  .banner {
