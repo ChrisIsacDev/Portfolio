@@ -1,4 +1,4 @@
-const roles = ["Ux/Ui Designer", "Front-end", "Social Media"];
+const roles = ["Designer UX/UI", "Fullstack Jr", "Social Media"];
 let roleIndex = 0;
 
 function changeRole() {
@@ -15,7 +15,7 @@ function changeRole() {
 function autoChangeRole() {
     setInterval(() => {
         changeRole();
-    }, 2000);
+    }, 1400);
 }
 
 // Chamando automaticamente a função de mudança de papel
