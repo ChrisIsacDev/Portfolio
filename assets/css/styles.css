@@ -31,11 +31,18 @@
 }
 
 .contri-title h2 {
-color: #fff;
+color: #0066FF;
 margin-top: 170px;
-margin-bottom: 64px;
+margin-bottom: 52px;
 text-align: center;
 }
+
+.contri-description {
+font-size: 24px;
+text-align: center;
+color: #555;
+}
+
 
 @media (max-width: 600px) {
   .service {
@@ -432,13 +439,14 @@ color: #3B87F9;
   transition: all 0.4s;
 }
 
-.contri-card ion-icon {
-font-size 72px;
-tex-align: center;
-margin-bottom: 20px;
-margin-right: 20px;
-margin-left: 20px;
-margin-top: 20px;
+
+.contri-card img {
+  width: 50px;
+  margin-top: 4px;
+  margin-bottom 0px;
+  margin-left: 2px;
+  filter: grayscale(100%);
+  transition: all 0.4s;
 }
 
 @media (max-width: 600px) {
@@ -479,6 +487,10 @@ margin-top: 20px;
   border: 1px solid #3B87F9;
   cursor: pointer;
   transform: scale(1.05);
+}
+
+.contri-card:hover img {
+  filter: grayscale(0%);
 }
 
 
