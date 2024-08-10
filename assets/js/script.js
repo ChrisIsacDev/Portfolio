@@ -1,4 +1,4 @@
-const roles = ["Designer UX/UI", "Fullstack Jr", "Social Media"];
+const roles = ["Fullstack", "Front-End", "Back-End"];
 let roleIndex = 0;
 
 function changeRole() {

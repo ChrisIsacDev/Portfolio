@@ -5,7 +5,7 @@
 
 .row-container h2 {
   text-align: center;
-  font-size: 42px;
+  font-size: 28px;
   font-weight: 600;
   color: #fff;
 }
@@ -30,6 +30,13 @@
   flex-direction: column; /* Adicionei uma direção de coluna para os elementos se empilharem verticalmente */
 }
 
+.contri-title h2 {
+color: #fff;
+margin-top: 170px;
+margin-bottom: 64px;
+text-align: center;
+}
+
 @media (max-width: 600px) {
   .service {
     flex: 1 0 100%;
@@ -48,7 +55,6 @@ color: #3B87F9;
 font-size: 20px;
 }
 
-.service h2,
 .service h3 {
   margin-bottom: 5px; /* Adicionei uma margem inferior para espaçamento entre os elementos */
   margin-left: 12px;
@@ -65,9 +71,11 @@ font-size: 20px;
 
 
 .service p {
-font-size: 14;
-margin-top: 20px;
+font-size: 12;
+margin-top: 24px;
+margin-bottom: 24px;
 margin-left: 12px;
+margin-right: 20px;
 }
 
 .service button{
@@ -91,24 +99,27 @@ gap: 10px;
 }
 
 .intro-image {
-  width: 10px;
-  margin-top: 32px;
+  width: 12px;
+  margin-top: 36px;
+  margin-left: 100px;
 }
 
 .intro-description {
-  margin-top: 120px;
+  margin-top: 100px;
   margin-left: 60px;
+  margin-right: 32px;
 }
 
 .intro-description h2 {
+  margin-top: 120px;
   margin-bottom: 10px;
-  font-size: 48px;
+  font-size: 24px;
   color: #3B87F9;
 }
 
 .intro-description h3 {
   margin-top: -20px;
-  font-size: 32px;
+  font-size: 62px;
   font-weight: 400;
   color: #fffbfb;
 }
@@ -137,19 +148,21 @@ margin-top: 40px;
 }
 
 .intro-description p {
+  font-size: 18px;
   margin: 10px;
   margin-left: 0;
+  margin-top: -20px;
   color: #a7a7a7;
 }
 
 .intro-description .contact {
 margin-right: 10px;
-width: 160px;
-height: 40px;
+width: 300px;
+height: 50px;
 color: #f4f4f4;
-border: 1px solid #3B87F9;
-border-radius: 20px;
-transition: all 0.4s;
+background-color: #3B87F9;
+border-radius: 12px;
+transition: all 0.5s;
 }
 
 .intro-description .more {
@@ -169,8 +182,8 @@ transition: all 0.4s;
 
   .intro-description .contact:hover {
   background-color: #3B87F9;
-  width: 186px;
-  letter-spacing: 2px;
+  width: 310px;
+  letter-spacing: 1px;
     }
 
 @keyframes typewriter {
@@ -280,15 +293,19 @@ button {
   transition: all 0.4s;
 }
 
-.about strong {
+strong {
 transition: all 0.4s;
+}
+
+.intro-description strong {
+  color: #3B87F9
 }
 
 .about:hover h2 {
   color: #3B87F9
 }
 
-.about:hover strong {
+strong:hover {
   color: #3B87F9
 }
 
@@ -315,10 +332,11 @@ transition: all 0.4s;
 
 .about-description p {
   color: #a7a7a7;
+  font-size: 14px;
   margin-top: 48px;
   margin-bottom: 20px; 
   margin-left: 12px;
-  margin-right: 48px;
+  margin-right: 220px;
 }
 .disponibilidade {
 margin-bottom: 20px;
@@ -394,14 +412,17 @@ color: #3B87F9;
 }
 
 .contribuitions-container {
-  margin-top: 180px;
+  margin-top: 64px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
 }
 
 .contri-card {
-  width: 48%;
+  width: 100px;
+  height: 100px;
   margin-bottom: 20px;
   padding: 20px;
   background-color: #0d0f13;
@@ -411,24 +432,19 @@ color: #3B87F9;
   transition: all 0.4s;
 }
 
+.contri-card ion-icon {
+font-size 72px;
+tex-align: center;
+margin-bottom: 20px;
+margin-right: 20px;
+margin-left: 20px;
+margin-top: 20px;
+}
+
 @media (max-width: 600px) {
   .contri-card {
     flex: 1 0 100%;
   }
-}
-
-.contri-card h3 {
-  color: white;
-  margin-top: 10px;
-  margin-bottom: -20px;
-}
-
-.contri-card hr {
-  border: 0.5px solid #3B87F9;
-  margin-top: 32px;
-  margin-bottom: 24px;
-  margin-left: -20px;
-  margin-right: -20px;
 }
 
 .contributions-list {
@@ -468,23 +484,19 @@ color: #3B87F9;
 
 .projects-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: center; /* Centraliza os cards horizontalmente */
+  align-items: center; /* Alinha os cards verticalmente no caso de haver altura variável */
   flex-wrap: wrap;
-  margin: -10px; /* Adicionando um margin negativo para compensar o gap */
+  gap: 20px; /* Espaçamento uniforme entre os cards */
   margin-top: 140px;
+  width: 100%; /* Garante que o container ocupe toda a largura disponível */
 }
 
-.projects-container {
-  display: flex;
-  justify-content: space-between; /* Ajustado de space-around para space-between */
-  flex-wrap: wrap;
-  margin: -10px; /* Adicionando um margin negativo para compensar o gap */
-  margin-top: 140px;
-}
+
 
 .project-card {
   display: flex;
-  flex-direction: column;
+ flex-direction: column;
   background-color: #0d0f13;
   border: 1px solid #555;
   border-radius: 12px;
@@ -502,11 +514,19 @@ color: #3B87F9;
 }
 
 .project-card img {
-  width: 50%;
+  width: 200px;
   height: 200px;
-  border-radius: 8px;
-  margin-top: 20px;
-  margin-left: 100px;
+  align: center;
+  margin-top: 12px;
+  margin-left: 96px;
+  margin-right: 48px;
+  filter: grayscale(100%);
+  transition: all 0.4s;
+  object-fit: contain;
+}
+
+.project-card:hover img {
+ filter: grayscale(0%);
 }
 
 .project-card hr {
@@ -530,8 +550,10 @@ color: #3B87F9;
 
 .project-title {
   color: #3B87F9;
-  font-size: 20px;
+  font-size: 24px;
+  text-align: center;
   margin-bottom: 10px;
+  margin-top: -20px;
 }
 
 .project-description {
@@ -541,28 +563,24 @@ color: #3B87F9;
 }
 
 .project-card:hover button {
-  margin-bottom: 24px;
-  margin-left: 12px;
-  margin-right: 10px;
-  width: 160px;
+  margin: 0 auto 24px;
+  width: 320px;
   height: 40px;
   color: #f4f4f4;
   background-color: #3B87F9;
-  border-radius: 20px;
   transition: all 0.4s;
 }
 
 
 .project-card button {
-  margin-bottom: 24px;
-  margin-left: 12px;
-  margin-right: 10px;
+  margin: 0 auto 24px;
   width: 160px;
   height: 40px;
   color: #f4f4f4;
   background-color: #5f5f5f;
-  border-radius: 20px;
+  border-radius: 8px;
   transition: all 0.4s;
+  display: block;
 }
 
 .footer-copy {
