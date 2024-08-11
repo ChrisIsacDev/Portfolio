@@ -31,16 +31,19 @@
 }
 
 .contri-title h2 {
-color: #0066FF;
-margin-top: 170px;
-margin-bottom: 52px;
-text-align: center;
+  color: #0066FF;
+  margin-top: 170px;
+  margin-bottom: 20px;
+  text-align: left; /* Alinha o título à esquerda */
+  margin-left: 10%; /* Ajusta o posicionamento à esquerda */
 }
 
 .contri-description {
-font-size: 24px;
-text-align: center;
-color: #555;
+  font-size: 24px;
+  color: #555;
+  text-align: left; /* Alinha o texto à esquerda */
+  margin-left: 10%; /* Ajusta o posicionamento à esquerda */
+  margin-bottom: 20px;
 }
 
 
@@ -118,15 +121,15 @@ gap: 10px;
 }
 
 .intro-description h2 {
-  margin-top: 120px;
-  margin-bottom: 10px;
-  font-size: 24px;
+  margin-top: -20px;
+  margin-bottom: 0px;
+  font-size: 36px;
   color: #3B87F9;
 }
 
 .intro-description h3 {
-  margin-top: -20px;
-  font-size: 62px;
+  margin-top: -32px;
+  font-size: 82px;
   font-weight: 400;
   color: #fffbfb;
 }
@@ -418,19 +421,33 @@ color: #3B87F9;
   background-color: #3B87F9
 }
 
-.contribuitions-container {
-  margin-top: 64px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  align-items: center;
-  justify-content: center;
+.pr-lng {
+margin-left: -120px;
+margin-right: 200px;
 }
+
+.contribuitions-layout {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-left: 10%;
+  margin-right: 10%;
+  flex-direction: column; /* Muda a direção para coluna em telas pequenas */
+}
+
+
+.contribuitions-container {
+  display: grid;
+  grid-template-columns: repeat(4, 120px); /* 4 colunas para os cards */
+  justify-content: center; /* Centraliza os cards em telas pequenas */
+  margin-bottom: 20px;
+  gap: 20px;
+}
+
 
 .contri-card {
   width: 100px;
   height: 100px;
-  margin-bottom: 20px;
   padding: 20px;
   background-color: #0d0f13;
   border-radius: 12px;
@@ -443,17 +460,23 @@ color: #3B87F9;
 .contri-card img {
   width: 50px;
   margin-top: 4px;
-  margin-bottom 0px;
-  margin-left: 2px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
   filter: grayscale(100%);
   transition: all 0.4s;
 }
 
-@media (max-width: 600px) {
-  .contri-card {
-    flex: 1 0 100%;
-  }
+.descriptive-text {
+  flex: 1;
+  padding-left: 40px; /* Espaçamento à esquerda do texto */
 }
+
+@media (max-width: 800px) {
+  .contri-title h2, .contri-description {
+    margin-left: 5%; /* Ajusta o posicionamento para telas menores */
+   }
+  }
 
 .contributions-list {
   list-style: none;
@@ -502,6 +525,15 @@ color: #3B87F9;
   gap: 20px; /* Espaçamento uniforme entre os cards */
   margin-top: 140px;
   width: 100%; /* Garante que o container ocupe toda a largura disponível */
+}
+
+
+
+.projects h2  {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 600;
+  color: #fff;
 }
 
 
