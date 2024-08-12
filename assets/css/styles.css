@@ -27,22 +27,20 @@
   background-color: #0d0f13;
   box-sizing: border-box;
   display: flex;
-  flex-direction: column; /* Adicionei uma direção de coluna para os elementos se empilharem verticalmente */
+  flex-direction: column;
 }
 
 .contri-title h2 {
   color: #0066FF;
   margin-top: 170px;
   margin-bottom: 20px;
-  text-align: left; /* Alinha o título à esquerda */
-  margin-left: 10%; /* Ajusta o posicionamento à esquerda */
+  text-align: center;
 }
 
 .contri-description {
-  font-size: 24px;
+  font-size: 16px;
   color: #555;
-  text-align: left; /* Alinha o texto à esquerda */
-  margin-left: 10%; /* Ajusta o posicionamento à esquerda */
+  text-align: center;
   margin-bottom: 20px;
 }
 
@@ -327,9 +325,18 @@ strong:hover {
 .about-description h2 {
   font-size: 32px;
   color: #5f5f5f;
-  margin-top: 32px; 
+  margin-top: 10px;
   margin-bottom: -20px;
   margin-left: 12px;
+  transition: all 0.4s;
+}
+
+ hx {
+  font-size: 16px;
+  color: #ffff;
+  margin-bottom: -32px;
+  margin-left: 12px;
+  margin-top: -200px;
   transition: all 0.4s;
 }
 
@@ -422,23 +429,20 @@ color: #3B87F9;
 }
 
 .pr-lng {
-margin-left: -120px;
-margin-right: 200px;
+
 }
 
 .contribuitions-layout {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
-  margin-left: 10%;
-  margin-right: 10%;
-  flex-direction: column; /* Muda a direção para coluna em telas pequenas */
+  flex-direction: column;
 }
 
 
 .contribuitions-container {
   display: grid;
-  grid-template-columns: repeat(4, 120px); /* 4 colunas para os cards */
+  grid-template-columns: repeat(4, 100px); /* 4 colunas para os cards */
   justify-content: center; /* Centraliza os cards em telas pequenas */
   margin-bottom: 20px;
   gap: 20px;
@@ -518,36 +522,34 @@ margin-right: 200px;
 
 
 .projects-container {
-  display: flex;
-  justify-content: center; /* Centraliza os cards horizontalmente */
-  align-items: center; /* Alinha os cards verticalmente no caso de haver altura variável */
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colunas com largura flexível */
   gap: 20px; /* Espaçamento uniforme entre os cards */
   margin-top: 140px;
-  width: 100%; /* Garante que o container ocupe toda a largura disponível */
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-
-
-.projects h2  {
+.projects h2 {
   text-align: center;
   font-size: 28px;
   font-weight: 600;
   color: #fff;
 }
 
-
-
 .project-card {
   display: flex;
- flex-direction: column;
+  flex-direction: column;
   background-color: #0d0f13;
   border: 1px solid #555;
   border-radius: 12px;
   overflow: hidden;
-  margin: 10px;
-  width: 400px;
   transition: all 0.5s;
+  width: 100%; /* Ajusta os cartões para ocupar a coluna */
+  max-width: 400px; /* Limita a largura máxima para evitar que os cartões fiquem muito largos */
+  height: 100%; /* Garante que os cartões tenham altura uniforme */
 }
 
 .project-card:hover {
@@ -560,36 +562,32 @@ margin-right: 200px;
 .project-card img {
   width: 200px;
   height: 200px;
-  align: center;
-  margin-top: 12px;
-  margin-left: 96px;
-  margin-right: 48px;
+  margin: 0 auto; /* Centraliza a imagem */
   filter: grayscale(100%);
   transition: all 0.4s;
   object-fit: contain;
 }
 
 .project-card:hover img {
- filter: grayscale(0%);
+  filter: grayscale(0%);
 }
 
 .project-card hr {
   border: 0.5px solid #5f5f5f;
   margin-top: 16px;
   margin-bottom: 16px;
-  transition: all 0;
 }
 
 .project-card:hover hr {
   border: 0.5px solid #3B87F9;
-  margin-top: 16px;
-  margin-bottom: 16px;
 }
-
 
 .project-info {
   padding: 15px;
-  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .project-title {
@@ -601,20 +599,10 @@ margin-right: 200px;
 }
 
 .project-description {
-  margin-left: 12px;
   font-size: 14px;
   color: #555;
+  flex-grow: 1; /* Permite que a descrição cresça para ocupar o espaço disponível */
 }
-
-.project-card:hover button {
-  margin: 0 auto 24px;
-  width: 320px;
-  height: 40px;
-  color: #f4f4f4;
-  background-color: #3B87F9;
-  transition: all 0.4s;
-}
-
 
 .project-card button {
   margin: 0 auto 24px;
@@ -627,16 +615,87 @@ margin-right: 200px;
   display: block;
 }
 
-.footer-copy {
-height: 50px;
-background-color: #101317;
-text-align: center;
-margin-top: 120px;
-margin-left: 0px;
-margin-right: 0px;
+.project-card:hover button {
+  width: 320px;
+  background-color: #3B87F9;
+  transition: all 0.4s;
 }
 
-footer p {
+/* Responsividade */
+@media (max-width: 1024px) {
+  .projects-container {
+    grid-template-columns: repeat(2, 1fr); /* Ajusta para 2 colunas em telas menores */
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-container {
+    grid-template-columns: repeat(1, 1fr); /* Ajusta para 1 coluna em telas pequenas */
+  }
+
+  .project-card {
+    max-width: 100%; /* Remove o limite de largura em telas pequenas */
+  }
+}
+
+
+footer {
+  background-color: #101317;
+  padding: 40px 20px; /* Espaçamento interno do rodapé */
   margin-top: 120px;
   color: #a7a7a7;
+  text-align: center;
+  border-top: 1px solid #2c2f33; /* Linha divisória acima do rodapé */
+}
+
+.footer-content {
+  max-width: 1200px; /* Limita a largura máxima do conteúdo */
+  margin: 0 auto; /* Centraliza o conteúdo */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-copy {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.footer-copy p {
+  margin: 0;
+  padding: 0;
+  color: #a7a7a7;
+}
+
+footer a {
+  color: #a7a7a7;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #ffffff;
+}
+
+/* Efeito visual sutil com ícone de copyright */
+.footer-copy p:before {
+  content: "\00a9 "; /* Adiciona o símbolo de copyright */
+  font-weight: 400;
+  color: #a7a7a7;
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 600px) {
+  footer {
+    padding: 20px 10px;
   }
+
+  .footer-content {
+    padding: 0 20px;
+  }
+
+  .footer-copy {
+    font-size: 12px;
+  }
+}
+.

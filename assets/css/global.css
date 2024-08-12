@@ -6,8 +6,7 @@ body {
   overflow: inherit;
   background-color: #090A0C;
   height: 100vh;
-  margin-right: 25px; 
-  margin-left: 25px; 
+
 
   --sb-track-color: #000000;
   --sb-thumb-color: #3B87F9;
@@ -203,5 +202,10 @@ header nav ul li a {
  header nav ul li a:hover {
   color: #3B87F9;
   transform: scale(1.2);
+ }
+
+ section {
+   margin-right: 72px;
+   margin-left: 72px;
  }
 
